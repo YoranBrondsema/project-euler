@@ -20,6 +20,7 @@ defmodule Prob2 do
   end
 end
 
-IO.inspect Enum.sum(
-  Enum.filter(Prob2.fibonacci_list_less_than(4000000), &(rem(&1, 2) == 0))
-)
+Prob2.fibonacci_list_less_than(4000000)
+|> Enum.filter(&(rem(&1, 2) === 0))
+|> Enum.sum
+|> IO.puts
